@@ -57,24 +57,80 @@ class MonApp extends StatelessWidget {
           Icon(Icons.add_alert_sharp),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: .start,
 
-        children: [
-          Container(
-            color: Colors.yellow,
-            padding: EdgeInsets.all(10),
-            height: 50,
-            width: 120,
-            child: Text("moi"),
-          ),
-          Text('Total Balance'),
-          Text('\$8 600', style: TextStyle(fontSize: 30, fontWeight: .bold)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [Text("CARD")],
-          ),
-        ],
+      body: Padding(
+        padding: EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: .start,
+
+          children: [
+            Text('Total Balance', style: TextStyle(fontSize: 12)),
+            Text('\$8 600', style: TextStyle(fontSize: 50, fontWeight: .bold)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("CARDS", style: TextStyle(fontSize: 12)),
+                Text("ADD +", style: TextStyle(color: Colors.blueAccent)),
+              ],
+            ),
+            Container(
+              height: 185,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin: EdgeInsets.only(top: 10, right: 10),
+                    width: 170,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.blue,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        Text(
+                          "VISA",
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                        Container(width: 1, height: 30),
+                        Text(
+                          "Salary",
+                          style: TextStyle(fontSize: 12, color: Colors.white),
+                        ),
+                        Text(
+                          "\$2230",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                        Container(width: 1, height: 10),
+                        Row(
+                          mainAxisAlignment: .spaceBetween,
+                          children: [
+                            Text(
+                              "**6917",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "01/04",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

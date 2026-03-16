@@ -81,8 +81,7 @@ class MonApp extends StatelessWidget {
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return Container(
-
-                    margin: EdgeInsets.only(top: 10, right: 10 ),
+                    margin: EdgeInsets.only(top: 10, right: 10),
                     width: 170,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -131,8 +130,37 @@ class MonApp extends StatelessWidget {
                 },
               ),
             ),
-            Text("FINANCE",style: TextStyle(fontSize:12 ),)
-          ],
+            Text("FINANCE", style: TextStyle(fontSize: 12)),
+            Container(
+              height: 150,
+              child: ListView.builder(
+              itemCount: 10,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(153, 230, 229, 229),
+                  ),
+                  height: 130,
+                  width: 140,
+                  padding: EdgeInsets.all(10),
+                  margin:EdgeInsets.only(right: 10) ,
+
+                  child: Column(
+                    crossAxisAlignment: .start,
+                    mainAxisAlignment: .spaceAround,
+                    children: [
+                      Icon(Icons.ad_units_outlined, size: 50),
+                      Text("My bonuses", style: TextStyle(fontSize: 12)),
+                    ],
+                  ),
+                );
+              },
+            ),
+           
+            )
+           ],
         ),
       ),
     );

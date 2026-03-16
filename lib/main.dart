@@ -74,13 +74,15 @@ class MonApp extends StatelessWidget {
               ],
             ),
             Container(
+              margin: EdgeInsets.only(bottom: 12),
               height: 185,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(top: 10, right: 10),
+
+                    margin: EdgeInsets.only(top: 10, right: 10 ),
                     width: 170,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -129,6 +131,7 @@ class MonApp extends StatelessWidget {
                 },
               ),
             ),
+            Text("FINANCE",style: TextStyle(fontSize:12 ),)
           ],
         ),
       ),

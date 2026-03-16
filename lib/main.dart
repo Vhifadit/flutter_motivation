@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      debugShowCheckedModeBanner:false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MonApp extends StatelessWidget {
   const MonApp({super.key});
 
@@ -44,23 +43,39 @@ class MonApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: CircleAvatar(//positionnement au debut de la navbar
-          backgroundColor:Colors.purple ,radius: 10,
-          child: Text('VH',style: TextStyle(color:Colors.white)),
+        leading: CircleAvatar(
+          //positionnement au debut de la navbar
+          backgroundColor: Colors.purple,
+          radius: 10,
+          child: Text('VH', style: TextStyle(color: Colors.white)),
         ),
-        title:Text('Hello, Vhifadit') ,//Positionnement apres le leading dans la appbar
-        actions: [//positionnement a la fin de la appbar
-          Icon(Icons.add_alert_sharp)
+        title: Text(
+          'Hello, Vhifadit',
+        ), //Positionnement apres le leading dans la appbar
+        actions: [
+          //positionnement a la fin de la appbar
+          Icon(Icons.add_alert_sharp),
         ],
       ),
-      body:Column(
-        crossAxisAlignment:.start ,
+      body: Column(
+        crossAxisAlignment: .start,
+
         children: [
+          Container(
+            color: Colors.yellow,
+            padding: EdgeInsets.all(10),
+            height: 50,
+            width: 120,
+            child: Text("moi"),
+          ),
           Text('Total Balance'),
-          Text('\$8 600',style: TextStyle(fontSize:30,fontWeight:.bold ),)
+          Text('\$8 600', style: TextStyle(fontSize: 30, fontWeight: .bold)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [Text("CARD")],
+          ),
         ],
-      ) ,
+      ),
     );
   }
 }
-

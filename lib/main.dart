@@ -154,12 +154,22 @@ class MonApp extends StatelessWidget {
                       Icon(Icons.ad_units_outlined, size: 50),
                       Text("My bonuses", style: TextStyle(fontSize: 12)),
                     ],
+
                   ),
                 );
               },
             ),
            
+            ),
+            Row(
+              mainAxisAlignment:.spaceBetween ,
+              children: [
+                Text("LAST TRANSACTIONS"),
+                Text("See all >",style:TextStyle(color:const Color.fromARGB(158, 155, 39, 176) ) ,)
+
+              ],
             )
+            
            ],
         ),
       ),

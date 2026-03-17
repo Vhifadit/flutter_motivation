@@ -134,44 +134,109 @@ class MonApp extends StatelessWidget {
             Container(
               height: 150,
               child: ListView.builder(
-              itemCount: 10,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(153, 230, 229, 229),
-                  ),
-                  height: 130,
-                  width: 140,
-                  padding: EdgeInsets.all(10),
-                  margin:EdgeInsets.only(right: 10) ,
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color.fromARGB(153, 230, 229, 229),
+                    ),
+                    height: 130,
+                    width: 140,
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(right: 10),
 
-                  child: Column(
-                    crossAxisAlignment: .start,
-                    mainAxisAlignment: .spaceAround,
-                    children: [
-                      Icon(Icons.ad_units_outlined, size: 50),
-                      Text("My bonuses", style: TextStyle(fontSize: 12)),
-                    ],
-
-                  ),
-                );
-              },
-            ),
-           
+                    child: Column(
+                      crossAxisAlignment: .start,
+                      mainAxisAlignment: .spaceAround,
+                      children: [
+                        Icon(Icons.ad_units_outlined, size: 50),
+                        Text("My bonuses", style: TextStyle(fontSize: 12)),
+                      ],
+                    ),
+                  );
+                },
+              ),
             ),
             Row(
-              mainAxisAlignment:.spaceBetween ,
+              mainAxisAlignment: .spaceBetween,
               children: [
                 Text("LAST TRANSACTIONS"),
-                Text("See all >",style:TextStyle(color:const Color.fromARGB(158, 155, 39, 176) ) ,)
-
+                Text(
+                  "See all >",
+                  style: TextStyle(
+                    color: const Color.fromARGB(158, 155, 39, 176),
+                  ),
+                ),
               ],
-            )
-            
-           ],
+            ),
+            Container(
+              height: 120,
+              child: ListView.builder(
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return Row(
+                    mainAxisAlignment: .spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            padding: EdgeInsets.all(16),
+                            margin: EdgeInsets.only(top: 10, right: 10),
+                            child: Icon(
+                              Icons.add_shopping_cart_rounded,
+                              size: 30,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                "Supermarket",
+                                style: TextStyle(fontSize: 10),
+                              ),
+                              Text(
+                                "Today,16:40",
+                                style: TextStyle(
+                                  fontSize: 8,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+
+                      Column(
+                        crossAxisAlignment: .end,
+                        children: [
+                          Text("-40\$", style: TextStyle(fontSize: 10)),
+                          Text(
+                            "payment",
+                            style: TextStyle(fontSize: 8, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.card_giftcard_rounded),label: "Cartes"),
+          BottomNavigationBarItem(icon: Icon(Icons.badge_sharp),label: "Transfert"),
+          //BottomNavigationBarItem(icon: Icon(Icons.badge_sharp),label: "Transfert")
+        ],
       ),
     );
   }

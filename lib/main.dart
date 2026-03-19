@@ -231,11 +231,12 @@ class MonApp extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type:BottomNavigationBarType.fixed ,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.card_giftcard_rounded),label: "Cartes"),
           BottomNavigationBarItem(icon: Icon(Icons.badge_sharp),label: "Transfert"),
-          //BottomNavigationBarItem(icon: Icon(Icons.badge_sharp),label: "Transfert")
+          BottomNavigationBarItem(icon: Icon(Icons.badge_sharp),label: "Transfert")
         ],
       ),
     );
